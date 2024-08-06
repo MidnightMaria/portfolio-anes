@@ -49,7 +49,7 @@ const Footer = () => {
       <h1 className="heading">Let&apos;s
         <span className="text-purple"> Get In Touch</span>
       </h1>
-      <div className="flex justify-between mx-10">
+      <div className="flex justify-between mx-10 flex-wrap">
         <div className='mt-4'>
           <div className='bg-agnes p-2 mt-4'>
               <MdOutlineMailOutline className='my-2 text-purple' size={25}/>
