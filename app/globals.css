@@ -35,6 +35,13 @@
     --radius: 0.5rem;
   }
 
+  .bg-agnes {
+    background: linear-gradient(90deg, rgba(50, 30, 50, 1) 0%, rgba(70, 40, 70, 1) 100%);
+    background-color: rgb(15, 10, 15);
+    border-radius: calc(1.75rem * 0.96);
+    cursor: pointer;
+  }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -70,9 +77,11 @@
   * {
     @apply border-border !scroll-smooth;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   button {
     @apply active:outline-none;
   }

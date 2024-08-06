@@ -1,53 +1,114 @@
-import { FaLocationArrow } from "react-icons/fa6";
+import React, { useRef, useState } from 'react';
+import { MdOutlineMailOutline } from "react-icons/md";
+import { BsWhatsapp, BsLinkedin, BsGithub, } from "react-icons/bs";
+import emailjs from 'emailjs-com';
 
-import { socialMedia } from "@/data";
-import MagicButton from "./MagicButton";
 
 const Footer = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formError, setFormError] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Basic form validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormError('Please fill in all fields.');
+      return;
+    }
+
+    if (formRef.current) {
+      emailjs.sendForm('service_4qe4p5f', 'template_r080652', formRef.current, '819XnIUSEpzram_r1')
+        .then((result) => {
+          console.log(result.text);
+          setFormSubmitted(true);
+        }, (error) => {
+          console.log(error.text);
+          setFormError('An error occurred. Please try again later.');
+        });
+    } else {
+      console.error("Form ref is not yet attached");
+    }
+  };
+
   return (
     <footer className="w-full pt-20 pb-10" id="contact">
-      {/* background grid */}
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        />
-      </div>
-
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
-        <a href="mailto:contact@jsmastery.pro">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
-        <p className="md:text-base text-sm md:font-normal font-light">
-          Copyright © 2024 Adrian Hajdin
-        </p>
-
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <div
-              key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
-              <img src={info.img} alt="icons" width={20} height={20} />
+      <h1 className="heading">Let&apos;s
+        <span className="text-purple"> Get In Touch</span>
+      </h1>
+      <div className="flex justify-between mx-10">
+        <div className='mt-4'>
+          <div className='bg-agnes p-2 mt-4'>
+              <MdOutlineMailOutline className='my-2 text-purple' size={25}/>
+              <h4>Email</h4>
+              <h5>agnesmarmarie@gmail.com</h5>
+              <div className='flex items-center text-purple'>
+                <a href='mailto:agnesmarmarie@gmail.com'>Send a message</a>
+              </div>
             </div>
-          ))}
+            <div className='bg-agnes p-2 mt-4'>
+                <BsWhatsapp className='my-2 text-purple' size={25}/>
+                <h4>WhatsApp</h4>
+                <h5>0821-7430-7119</h5>
+                <div className='flex items-center text-purple'>
+                  <a href='https://wa.me/6282174307119'>Send a message</a>
+                </div>
+            </div>
+
+            <div className='flex m-4'>  
+              <a href='https://www.linkedin.com/in/agnes-maria-anggelina-12a4b8291/' target="_blank"><BsLinkedin size={25} className='text-purple' style={{ marginRight: '1.2rem' }}/></a>
+              <a href='https://github.com/nesngenes' target="_blank"><BsGithub size={25} className='text-purple'/></a>
+          </div>
         </div>
+
+        <form ref={formRef} onSubmit={handleSubmit} className="text-form flex flex-col w-full lg:w-2/4">
+          <input
+            className="mt-4 p-2 w-full bg-agnes"
+            type="text"
+            name="name"
+            placeholder="Your Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            className="mt-4 p-2 w-full bg-agnes"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            className="mt-4 p-2 w-full bg-agnes"
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            rows={7}
+            required
+          />
+          <button className="form-button mt-4 p-2 text-purple" type="submit">Send Message</button>
+          {formSubmitted && <p className="text-green-500 mt-2">Message sent successfully!</p>}
+          {formError && <p className="text-red-500 mt-2">{formError}</p>}
+        </form>
       </div>
+
+      {/* ... rest of footer */}
     </footer>
   );
 };
