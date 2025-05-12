@@ -70,7 +70,7 @@ const Footer = () => {
 
             <div className='flex m-4'>  
               <a href='https://www.linkedin.com/in/agnes-maria-anggelina-12a4b8291/' target="_blank"><BsLinkedin size={25} className='text-purple' style={{ marginRight: '1.2rem' }}/></a>
-              <a href='https://github.com/nesngenes' target="_blank"><BsGithub size={25} className='text-purple'/></a>
+              <a href='https://github.com/MidnightMaria' target="_blank"><BsGithub size={25} className='text-purple'/></a>
           </div>
         </div>
 
