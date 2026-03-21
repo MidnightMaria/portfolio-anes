@@ -1,3 +1,13 @@
+type GridItem = {
+  id: number;
+  title: string;
+  className: string;
+  img?: string;
+  imgClassName?: string;
+  titleClassName?: string;
+  spareImg?: string;
+};
+
 // ================= NAV =================
 export const navItems = [
   { name: "Home", link: "#" },
@@ -8,8 +18,9 @@ export const navItems = [
 ];
 
 // ================= GRID =================
-export const gridItems = [
+export const gridItems: GridItem[] = [
   {
+
     id: 1,
     title: "My Skill Set",
     className: "lg:col-span-6 md:col-span-6 md:row-span-12",
