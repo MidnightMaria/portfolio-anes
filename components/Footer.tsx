@@ -54,9 +54,9 @@ const Footer = () => {
           <div className='bg-agnes p-2 mt-4'>
               <MdOutlineMailOutline className='my-2 text-purple' size={25}/>
               <h4>Email</h4>
-              <h5>agnesmarmarie@gmail.com</h5>
+              <h5>agnesmariaanggelina@gmail.com</h5>
               <div className='flex items-center text-purple'>
-                <a href='mailto:agnesmarmarie@gmail.com'>Send a message</a>
+                <a href='mailto:agnesmariaanggelina@gmail.com'>Send a message</a>
               </div>
             </div>
             <div className='bg-agnes p-2 mt-4'>
