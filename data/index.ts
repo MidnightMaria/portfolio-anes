@@ -15,6 +15,8 @@ export const navItems = [
   { name: "Skillset", link: "#skill" },
   { name: "Projects", link: "#projects" },
   { name: "Contact", link: "#contact" },
+  { name: "Certificates", link: "#certificates" },
+  { name: "Comunity Teaching", link: "#community-teaching" }
 ];
 
 // ================= GRID =================
@@ -559,4 +561,42 @@ export const workExperience = [
 export const socialMedia = [
   { id: 1, icon: "/git.svg", link: "https://github.com" },
   { id: 2, icon: "/link.svg", link: "https://linkedin.com" },
+];
+
+export type Lesson = {
+  id: number;
+  title: string;
+  description: string;
+  images: string[];
+  link?: string;
+};
+
+// ================= COMMUNITY TEACHING / LESSONS =================
+export const lessons: Lesson[] = [
+  {
+    id: 1,
+    title: "Intro to Docker",
+    description:
+      "Created a structured lesson explaining Docker fundamentals for beginners, covering containers, images, Dockerfile, and running PostgreSQL inside containers. Engaged with learners and answered questions.",
+    images: Array.from({ length: 22 }, (_, i) => `/agnes-docker-lesson/${i + 1}.jpg`),
+    link: "#",
+  },
+  {
+  id: 2,
+  title: "Enterprise Security Introduction",
+  description:
+    "Created a small lesson about how security works in enterprise environments. Common practices implemented in large organizations are explained.",
+  images: [
+    "/cybersecurity-lesson/1.jpg",
+    "/cybersecurity-lesson/2.jpg",
+    "/cybersecurity-lesson/3.jpg",
+    "/cybersecurity-lesson/4.jpg",
+    "/cybersecurity-lesson/5.jpg",
+    "/cybersecurity-lesson/6.jpg",
+    "/cybersecurity-lesson/7.jpg",
+    "/cybersecurity-lesson/8.jpg",
+    "/cybersecurity-lesson/9.jpg",
+  ],
+  link: "#",
+},
 ];

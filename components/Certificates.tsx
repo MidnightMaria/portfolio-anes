@@ -3,7 +3,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 const Certificates = () => {
   return (
-    <div className="py-20">
+    <div className="py-20" id="certificates">
       <h1 className="heading">
         <span className="text-purple">Certificates</span>
       </h1>

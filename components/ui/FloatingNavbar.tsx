@@ -16,7 +16,7 @@ export const FloatingNav = ({
 }: {
   navItems: {
     name: string;
-    link?: string; // ✅ make optional (safe)
+    link?: string;
     icon?: JSX.Element;
   }[];
   className?: string;
