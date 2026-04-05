@@ -16,7 +16,7 @@ export const navItems = [
   { name: "Projects", link: "#projects" },
   { name: "Contact", link: "#contact" },
   { name: "Certificates", link: "#certificates" },
-  { name: "Comunity Teaching", link: "#community-teaching" }
+  { name: "Community Teaching", link: "#community-teaching" }
 ];
 
 // ================= GRID =================
@@ -597,6 +597,14 @@ export const lessons: Lesson[] = [
     "/cybersecurity-lesson/8.jpg",
     "/cybersecurity-lesson/9.jpg",
   ],
-  link: "#",
-},
+    link: "#",
+  },
+  {
+    id: 3,
+    title: "Object-Oriented Programming (OOP) Fundamentals",
+    description:
+      "Designed and delivered a beginner-friendly lesson on Object-Oriented Programming. Covered core concepts such as objects, classes, encapsulation, inheritance, polymorphism, and abstraction using real-world analogies and Java code examples.",
+    images: Array.from({ length: 18 }, (_, i) => `/oop-lesson/${i + 1}.jpg`),
+    link: "#",
+  },
 ];
