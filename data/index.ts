@@ -514,6 +514,112 @@ export const projects: Project[] = [
     "Enhances user experience with location-based features and secure login system.",
 }
   },
+   {
+    id: 9,
+    title: "Indonesian Inflation Forecasting",
+    description:
+      "Time-series forecasting project analyzing Indonesian monthly inflation using macroeconomic indicators and comparing ARIMA, SARIMAX, and XGBoost models.",
+
+    thumbnail: "/project-inflation-forecasting.png",
+
+    techStack: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Statsmodels",
+      "Scikit-learn",
+      "XGBoost",
+      "Time Series",
+    ],
+
+    github: "https://github.com/MidnightMaria/final-inflation-forecast",
+
+    details: {
+      overview:
+        "Analyzed and forecasted Indonesian monthly inflation using historical data from 2009–2025 and macroeconomic indicators including BI Rate, USD/IDR exchange rate, and Brent crude oil prices.",
+
+      screenshots: [
+        {
+          title: "Monthly Inflation Trend (2009–2025)",
+          img: "/projects/inflation-forecasting/figures/inflation_trend.png",
+        },
+        {
+          title: "BI Rate Trend (2009–2025)",
+          img: "/projects/inflation-forecasting/figures/bi_rate_trend.png",
+        },
+        {
+          title: "USD/IDR Exchange Rate (2009–2025)",
+          img: "/projects/inflation-forecasting/figures/usd_idr_trend.png",
+        },
+        {
+          title: "Brent Oil Price (2009–2025)",
+          img: "/projects/inflation-forecasting/figures/brent_trend.png",
+        },
+        {
+          title: "Correlation Matrix",
+          img: "/projects/inflation-forecasting/figures/correlation_heatmap.png",
+        },
+        {
+          title: "ARIMA Prediction vs Actual Inflation",
+          img: "/projects/inflation-forecasting/figures/arima_prediction.png",
+        },
+        {
+          title: "SARIMAX Prediction vs Actual Inflation",
+          img: "/projects/inflation-forecasting/figures/sarimax_prediction.png",
+        },
+        {
+          title: "XGBoost Prediction vs Actual Inflation",
+          img: "/projects/inflation-forecasting/figures/xgboost_prediction.png",
+        },
+      ],
+
+      features: [
+        "Exploratory data analysis of Indonesian inflation",
+        "Analysis of macroeconomic indicators",
+        "Correlation analysis between inflation and external variables",
+        "Time-series forecasting using ARIMA",
+        "Exogenous variable forecasting using SARIMAX",
+        "Machine learning forecasting using XGBoost",
+        "Model evaluation using MAE and RMSE",
+        "Time-series cross-validation and hyperparameter tuning",
+      ],
+
+      pipeline: [
+        "Data collection and integration",
+        "Data preprocessing and cleaning",
+        "Exploratory data analysis",
+        "Stationarity testing using ADF",
+        "ACF and PACF analysis",
+        "ARIMA modeling",
+        "SARIMAX modeling with macroeconomic variables",
+        "Feature engineering for XGBoost",
+        "Time-series cross-validation",
+        "Model evaluation and comparison",
+      ],
+
+      systemDesign: [
+        "Python-based data science pipeline",
+        "Time-series forecasting workflow",
+        "Statistical and machine learning model comparison",
+        "Macroeconomic variables used as external predictors",
+      ],
+
+      dataModel: [
+        "Monthly Indonesian inflation",
+        "BI Rate",
+        "USD/IDR exchange rate",
+        "Brent crude oil price",
+        "Lagged inflation features",
+        "Calendar-based features",
+      ],
+
+      challenges:
+        "Capturing highly volatile inflation movements while maintaining reliable forecasting performance across statistical and machine learning approaches.",
+
+      impact:
+        "Demonstrates an end-to-end time-series forecasting workflow combining statistical modeling, macroeconomic analysis, and machine learning.",
+    },
+  },
 ];
 
 // ================= CERTIFICATES =================
